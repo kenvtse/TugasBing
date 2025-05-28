@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Comprehensive English Grammar Course covering parts of speech, sentence structure, articles, prepositions, and subject-verb agreement">
+  <title>Grammar Course - English Course</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    .lesson-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .lesson-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <header class="bg-white shadow sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 sm:mb-0">
+        <i class="fas fa-book-open text-blue-600 text-2xl mr-2"></i>
+        <h1 class="text-2xl font-bold text-blue-600">EnglishCourse</h1>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Index</a>
+        <a href="home.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
+        <a href="courses.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Courses</a>
+        <a href="login.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Login</a>
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-700 mb-4">Grammar Course</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Master the fundamentals of English grammar with our comprehensive course. Perfect for beginners and intermediate learners.</p>
+      <div class="mt-6 flex justify-center gap-4">
+        <button class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">
+          Start Learning
+        </button>
+        <button class="border border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-50 transition duration-300">
+          Preview Course
+        </button>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="mb-10 bg-white p-4 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-sm font-medium text-gray-700">Course Progress</span>
+        <span class="text-sm font-medium text-blue-600">20% Complete</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2.5">
+        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 20%"></div>
+      </div>
+    </div>
+
+    <!-- Lesson Sections -->
+    <section class="space-y-8">
+      <article class="lesson-card bg-white p-6 rounded-lg shadow border-l-4 border-blue-600">
+        <div class="flex items-start">
+          <div class="bg-blue-100 p-3 rounded-full mr-4">
+            <i class="fas fa-pen-fancy text-blue-600 text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-2">1. Parts of Speech</h3>
+            <p class="text-gray-700 mb-4">Understanding the basic building blocks of English language and how they function in sentences.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li><strong>Nouns:</strong> person, place, or thing (e.g., cat, school, happiness)</li>
+              <li><strong>Verbs:</strong> action or state (e.g., run, be, think)</li>
+              <li><strong>Adjectives:</strong> describe nouns (e.g., happy, fast, intelligent)</li>
+              <li><strong>Adverbs:</strong> describe verbs/adjectives (e.g., quickly, very, extremely)</li>
+              <li><strong>Pronouns:</strong> replace nouns (e.g., he, she, they)</li>
+              <li><strong>Prepositions, Conjunctions, Interjections</strong></li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Beginner</span>
+              <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">15 min</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Video</span>
+              <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Quiz</span>
+            </div>
+            <button class="mt-4 text-blue-600 font-medium flex items-center hover:text-blue-800">
+              Start Lesson <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson-card bg-white p-6 rounded-lg shadow border-l-4 border-green-500">
+        <div class="flex items-start">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="fas fa-layer-group text-green-600 text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-green-600 mb-2">2. Sentence Structure</h3>
+            <p class="text-gray-700 mb-4">Learn how to construct proper English sentences with correct word order and relationships.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li><strong>Basic Pattern:</strong> Subject + Verb + Object</li>
+              <li>Example: <em>She (subject) eats (verb) apples (object).</em></li>
+              <li><strong>Compound Sentences:</strong> Using conjunctions (and, but, or)</li>
+              <li><strong>Complex Sentences:</strong> Independent + dependent clauses</li>
+              <li><strong>Four Types of Sentences:</strong> Declarative, Interrogative, Imperative, Exclamatory</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Beginner</span>
+              <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">20 min</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Interactive</span>
+            </div>
+            <button class="mt-4 text-green-600 font-medium flex items-center hover:text-green-800">
+              Start Lesson <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson-card bg-white p-6 rounded-lg shadow border-l-4 border-purple-500">
+        <div class="flex items-start">
+          <div class="bg-purple-100 p-3 rounded-full mr-4">
+            <i class="fas fa-file-word text-purple-600 text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-purple-600 mb-2">3. Articles</h3>
+            <p class="text-gray-700 mb-4">Master the use of articles to specify or generalize nouns in your sentences.</p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-medium text-gray-800 mb-2">Definite Article (the)</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Used with specific nouns</li>
+                  <li>Example: <em>The sun is bright today.</em></li>
+                  <li>Example: <em>Please pass the salt.</em></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-2">Indefinite Articles (a/an)</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Used with general, singular nouns</li>
+                  <li>Example: <em>I need a pen.</em> (any pen)</li>
+                  <li>Example: <em>She's an engineer.</em> (one of many)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Beginner</span>
+              <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">12 min</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Examples</span>
+              <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Exercise</span>
+            </div>
+            <button class="mt-4 text-purple-600 font-medium flex items-center hover:text-purple-800">
+              Start Lesson <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson-card bg-white p-6 rounded-lg shadow border-l-4 border-yellow-500">
+        <div class="flex items-start">
+          <div class="bg-yellow-100 p-3 rounded-full mr-4">
+            <i class="fas fa-project-diagram text-yellow-600 text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-yellow-600 mb-2">4. Prepositions</h3>
+            <p class="text-gray-700 mb-4">Learn how prepositions show relationships between words in time, space, and logic.</p>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div>
+                <h4 class="font-medium text-gray-800 mb-2">Time Prepositions</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>at, in, on, during</li>
+                  <li>Example: <em>At 5pm, on Monday, in July</em></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-2">Place Prepositions</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>in, on, at, under, beside</li>
+                  <li>Example: <em>The book is on the table.</em></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-2">Direction Prepositions</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>to, from, into, towards</li>
+                  <li>Example: <em>She walked to the store.</em></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Intermediate</span>
+              <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">18 min</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Diagram</span>
+            </div>
+            <button class="mt-4 text-yellow-600 font-medium flex items-center hover:text-yellow-800">
+              Start Lesson <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="lesson-card bg-white p-6 rounded-lg shadow border-l-4 border-red-500">
+        <div class="flex items-start">
+          <div class="bg-red-100 p-3 rounded-full mr-4">
+            <i class="fas fa-handshake text-red-600 text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-red-600 mb-2">5. Subject-Verb Agreement</h3>
+            <p class="text-gray-700 mb-4">Ensure your subjects and verbs always match in number and person.</p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-medium text-gray-800 mb-2">Basic Rules</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Singular subjects take singular verbs</li>
+                  <li>Plural subjects take plural verbs</li>
+                  <li><strong>Correct:</strong> He runs. They run.</li>
+                  <li><strong>Incorrect:</strong> He run. They runs.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-2">Special Cases</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Collective nouns (team, family)</li>
+                  <li>Indefinite pronouns (everyone, each)</li>
+                  <li>Compound subjects (and, or, nor)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Intermediate</span>
+              <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">25 min</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Practice</span>
+              <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Quiz</span>
+            </div>
+            <button class="mt-4 text-red-600 font-medium flex items-center hover:text-red-800">
+              Start Lesson <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Course Completion -->
+    <div class="mt-16 bg-blue-50 p-6 rounded-lg border border-blue-200">
+      <div class="text-center">
+        <i class="fas fa-trophy text-blue-600 text-4xl mb-4"></i>
+        <h3 class="text-2xl font-bold text-blue-700 mb-2">Complete the Course</h3>
+        <p class="text-gray-700 mb-6 max-w-2xl mx-auto">Finish all lessons and quizzes to earn your Grammar Mastery Certificate and showcase your English grammar skills.</p>
+        <button class="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
+          Get Your Certificate
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">EnglishCourse</h3>
+          <p class="text-gray-400">Helping you master English grammar, vocabulary, and communication skills since 2020.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Courses</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Grammar</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Vocabulary</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Pronunciation</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Business English</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Exercises</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Quizzes</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Connect</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="mt-4">
+            <p class="text-gray-400">Subscribe to our newsletter</p>
+            <div class="mt-2 flex">
+              <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l text-gray-800 w-full">
+              <button class="bg-blue-600 px-4 py-2 rounded-r hover:bg-blue-700 transition">Join</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 EnglishCourse. All rights reserved. | <a href="#" class="hover:text-white transition">Privacy Policy</a> | <a href="#" class="hover:text-white transition">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple script for demonstration
+    document.addEventListener('DOMContentLoaded', function() {
+      const lessonCards = document.querySelectorAll('.lesson-card');
+      
+      lessonCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          if (!e.target.classList.contains('lesson-card')) return;
+          console.log('Lesson selected: ' + this.querySelector('h3').textContent);
+          // In a real app, this would navigate to the lesson page
+        });
+      });
+    });
+  </script>
+</body>
+</html>

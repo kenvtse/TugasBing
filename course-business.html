@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Master essential Business English vocabulary for meetings, emails, finance, and professional communication">
+  <title>Business English Vocabulary - EnglishCourse</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    .vocab-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid;
+    }
+    .vocab-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    .term-definition {
+      display: none;
+    }
+    .term-definition.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header / Navigation -->
+  <header class="bg-white shadow sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 sm:mb-0">
+        <i class="fas fa-briefcase text-blue-600 text-2xl mr-2"></i>
+        <h1 class="text-2xl font-bold text-blue-600">EnglishCourse</h1>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Index</a>
+        <a href="home.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
+        <a href="courses.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Courses</a>
+        <a href="login.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Login</a>
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Sign Up Free</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-blue-700 mb-4">Business English Vocabulary</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Master the essential vocabulary for professional success in meetings, emails, negotiations, and workplace communication.</p>
+      <div class="mt-6 flex justify-center gap-4">
+        <button class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
+          <i class="fas fa-play mr-2"></i> Start Learning
+        </button>
+        <button class="border border-blue-600 text-blue-600 px-6 py-3 rounded-md hover:bg-blue-50 transition duration-300 font-medium">
+          <i class="fas fa-eye mr-2"></i> Preview Course
+        </button>
+      </div>
+    </div>
+
+    <!-- Progress Tracker -->
+    <div class="bg-white p-5 rounded-xl shadow mb-10">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="w-full sm:w-auto">
+          <h3 class="font-medium text-gray-800 mb-1">Course Progress</h3>
+          <div class="flex items-center gap-3">
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 25%"></div>
+            </div>
+            <span class="text-sm font-medium text-gray-600 whitespace-nowrap">25% Complete</span>
+          </div>
+        </div>
+        <div class="flex gap-3 w-full sm:w-auto">
+          <button class="flex-1 sm:flex-none bg-blue-50 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-100 transition">
+            <i class="fas fa-bookmark mr-2"></i> Save Progress
+          </button>
+          <button class="flex-1 sm:flex-none bg-green-50 text-green-600 px-4 py-2 rounded-md hover:bg-green-100 transition">
+            <i class="fas fa-certificate mr-2"></i> Get Certificate
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vocabulary Sections -->
+    <section class="space-y-8">
+      <!-- Common Business Terms -->
+      <article class="vocab-card bg-white p-6 rounded-lg shadow border-l-blue-500">
+        <div class="flex items-start">
+          <div class="bg-blue-100 p-3 rounded-full mr-4">
+            <i class="fas fa-chart-line text-blue-600 text-lg"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h3 class="text-2xl font-semibold text-blue-600 mb-3">1. Common Business Terms</h3>
+              <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Essential</span>
+            </div>
+            <p class="text-gray-700 mb-4">These fundamental terms form the backbone of professional business communication across all industries.</p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-blue-600 flex justify-between items-center">
+                  <span>Revenue</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>The total income generated by a business from its normal business activities, usually from the sale of goods and services to customers.</p>
+                  <p class="mt-2 text-sm bg-blue-50 p-2 rounded"><strong>Example:</strong> "Our company's revenue increased by 15% this quarter due to higher sales volume."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-blue-600 flex justify-between items-center">
+                  <span>Profit</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>The financial gain when the revenue earned exceeds the expenses, costs, and taxes needed to sustain the business.</p>
+                  <p class="mt-2 text-sm bg-blue-50 p-2 rounded"><strong>Example:</strong> "After deducting all operating costs, our net profit was $250,000 last fiscal year."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-blue-600 flex justify-between items-center">
+                  <span>Meeting</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>A gathering of two or more people with a common purpose, typically to discuss business matters, make decisions, or share information.</p>
+                  <p class="mt-2 text-sm bg-blue-50 p-2 rounded"><strong>Example:</strong> "Let's schedule a meeting next week to review the project timeline and deliverables."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-blue-600 flex justify-between items-center">
+                  <span>Deadline</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>The latest time or date by which something should be completed, often with consequences for late delivery.</p>
+                  <p class="mt-2 text-sm bg-blue-50 p-2 rounded"><strong>Example:</strong> "The deadline for submitting the proposal is Friday at 5 PM—no extensions will be granted."</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 flex justify-between items-center">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock mr-1"></i> 15 min • 
+                <i class="fas fa-headphones ml-2 mr-1"></i> Audio • 
+                <i class="fas fa-file-alt ml-2 mr-1"></i> PDF
+              </div>
+              <button class="text-blue-600 font-medium hover:text-blue-800 flex items-center">
+                Practice Exercise <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Business Roles -->
+      <article class="vocab-card bg-white p-6 rounded-lg shadow border-l-purple-500">
+        <div class="flex items-start">
+          <div class="bg-purple-100 p-3 rounded-full mr-4">
+            <i class="fas fa-users text-purple-600 text-lg"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h3 class="text-2xl font-semibold text-purple-600 mb-3">2. Business Roles & Positions</h3>
+              <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Organizational</span>
+            </div>
+            <p class="text-gray-700 mb-4">Understanding organizational structures and job titles is crucial for professional communication and networking.</p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-purple-600 flex justify-between items-center">
+                  <span>CEO (Chief Executive Officer)</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>The highest-ranking executive in a company, responsible for making major corporate decisions and managing overall operations.</p>
+                  <p class="mt-2 text-sm bg-purple-50 p-2 rounded"><strong>Example:</strong> "The CEO announced a new strategic direction for the company during the annual meeting."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-purple-600 flex justify-between items-center">
+                  <span>Manager</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>An individual who is responsible for supervising a team or department, making decisions, and ensuring goals are met.</p>
+                  <p class="mt-2 text-sm bg-purple-50 p-2 rounded"><strong>Example:</strong> "As a project manager, I oversee timelines, budgets, and team coordination."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-purple-600 flex justify-between items-center">
+                  <span>Intern</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>A student or trainee who works, sometimes without pay, to gain work experience or satisfy requirements for a qualification.</p>
+                  <p class="mt-2 text-sm bg-purple-50 p-2 rounded"><strong>Example:</strong> "We're hiring three summer interns to assist with market research and data analysis."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-purple-600 flex justify-between items-center">
+                  <span>Accountant</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>A professional who performs accounting functions such as audits, financial statement analysis, and tax preparation.</p>
+                  <p class="mt-2 text-sm bg-purple-50 p-2 rounded"><strong>Example:</strong> "Our accountant prepares monthly financial reports and handles all tax filings."</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 flex justify-between items-center">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock mr-1"></i> 18 min • 
+                <i class="fas fa-video ml-2 mr-1"></i> Video • 
+                <i class="fas fa-microphone ml-2 mr-1"></i> Pronunciation
+              </div>
+              <button class="text-purple-600 font-medium hover:text-purple-800 flex items-center">
+                Role-play Activity <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Financial Vocabulary -->
+      <article class="vocab-card bg-white p-6 rounded-lg shadow border-l-green-500">
+        <div class="flex items-start">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="fas fa-money-bill-wave text-green-600 text-lg"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h3 class="text-2xl font-semibold text-green-600 mb-3">3. Financial Vocabulary</h3>
+              <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Numbers</span>
+            </div>
+            <p class="text-gray-700 mb-4">Key financial terms that every professional should know for budgeting, reporting, and strategic planning.</p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-green-600 flex justify-between items-center">
+                  <span>Invoice</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>A time-stamped commercial document that itemizes and records a transaction between a buyer and seller.</p>
+                  <p class="mt-2 text-sm bg-green-50 p-2 rounded"><strong>Example:</strong> "Please send the invoice to accounting@company.com for payment processing."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-green-600 flex justify-between items-center">
+                  <span>Budget</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>An estimate of income and expenditure for a set period of time, used for planning and control purposes.</p>
+                  <p class="mt-2 text-sm bg-green-50 p-2 rounded"><strong>Example:</strong> "The marketing department needs to stay within its allocated budget for the quarter."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-green-600 flex justify-between items-center">
+                  <span>Expense</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>The cost required for something; the money spent on something to conduct business operations.</p>
+                  <p class="mt-2 text-sm bg-green-50 p-2 rounded"><strong>Example:</strong> "All travel expenses must be approved in advance and documented with receipts."</p>
+                </div>
+              </div>
+              
+              <div class="term-item border-b border-gray-100 pb-3">
+                <button class="term-toggle w-full text-left font-medium text-gray-800 hover:text-green-600 flex justify-between items-center">
+                  <span>Investment</span>
+                  <i class="fas fa-chevron-down text-sm transition-transform"></i>
+                </button>
+                <div class="term-definition mt-2 text-gray-600 pl-2">
+                  <p>The action or process of allocating money or resources with the expectation of generating profit or material result.</p>
+                  <p class="mt-2 text-sm bg-green-50 p-2 rounded"><strong>Example:</strong> "The company made a significant investment in new technology to improve efficiency."</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 flex justify-between items-center">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock mr-1"></i> 20 min • 
+                <i class="fas fa-chart-pie ml-2 mr-1"></i> Infographic • 
+                <i class="fas fa-calculator ml-2 mr-1"></i> Worksheet
+              </div>
+              <button class="text-green-600 font-medium hover:text-green-800 flex items-center">
+                Financial Quiz <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Office Communication -->
+      <article class="vocab-card bg-white p-6 rounded-lg shadow border-l-yellow-500">
+        <div class="flex items-start">
+          <div class="bg-yellow-100 p-3 rounded-full mr-4">
+            <i class="fas fa-comments text-yellow-600 text-lg"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h3 class="text-2xl font-semibold text-yellow-600 mb-3">4. Office Communication Phrases</h3>
+              <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Conversational</span>
+            </div>
+            <p class="text-gray-700 mb-4">Common expressions used in workplace conversations, meetings, and casual professional interactions.</p>
+            
+            <div class="space-y-4">
+              <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                <p class="font-medium text-gray-800">"Let's touch base later."</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>Meaning: Suggests checking in or following up on a topic at a later time.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "I'm in meetings all morning—let's touch base after lunch to discuss the client's feedback."</p>
+                </div>
+              </div>
+              
+              <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                <p class="font-medium text-gray-800">"Can you follow up on that?"</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>Meaning: A request to take additional action or gather more information about a specific matter.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "The client asked about delivery timelines—can you follow up with logistics and get back to them?"</p>
+                </div>
+              </div>
+              
+              <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                <p class="font-medium text-gray-800">"I'll loop you in on the email."</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>Meaning: Indicates the speaker will include the listener in an email conversation for awareness or input.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "I'm emailing the vendor about the contract terms—I'll loop you in so you can review the details."</p>
+                </div>
+              </div>
+              
+              <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                <p class="font-medium text-gray-800">"Let's take this offline."</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>Meaning: Suggests discussing a topic separately, often after a meeting or outside the current conversation.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "This is an important issue—let's take it offline and schedule a separate meeting to address it properly."</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 flex justify-between items-center">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock mr-1"></i> 15 min • 
+                <i class="fas fa-headset ml-2 mr-1"></i> Audio Role-play • 
+                <i class="fas fa-comment-dots ml-2 mr-1"></i> Dialogue Practice
+              </div>
+              <button class="text-yellow-600 font-medium hover:text-yellow-800 flex items-center">
+                Practice Conversations <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Business Email Phrases -->
+      <article class="vocab-card bg-white p-6 rounded-lg shadow border-l-red-500">
+        <div class="flex items-start">
+          <div class="bg-red-100 p-3 rounded-full mr-4">
+            <i class="fas fa-envelope text-red-600 text-lg"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h3 class="text-2xl font-semibold text-red-600 mb-3">5. Business Email Phrases</h3>
+              <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Written</span>
+            </div>
+            <p class="text-gray-700 mb-4">Professional email expressions that convey politeness, clarity, and proper business etiquette.</p>
+            
+            <div class="space-y-4">
+              <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                <p class="font-medium text-gray-800">"I hope this email finds you well."</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>A polite opening phrase used to start professional emails, showing consideration for the recipient.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "I hope this email finds you well. I'm writing to follow up on our meeting last Tuesday..."</p>
+                </div>
+              </div>
+              
+              <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                <p class="font-medium text-gray-800">"Please let me know if you have any questions."</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>A helpful closing phrase that invites further communication and shows willingness to assist.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "Attached is the report you requested. Please let me know if you have any questions or need additional information."</p>
+                </div>
+              </div>
+              
+              <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                <p class="font-medium text-gray-800">"Looking forward to your response."</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>A professional way to indicate you're awaiting a reply, often used to close emails that require action.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "Could you please confirm your availability by Friday? Looking forward to your response."</p>
+                </div>
+              </div>
+              
+              <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                <p class="font-medium text-gray-800">"Attached is the report for your review."</p>
+                <div class="term-definition mt-2 text-gray-600">
+                  <p>A clear statement indicating that documents are included with the email for examination.</p>
+                  <p class="mt-2 text-sm italic"><strong>Usage:</strong> "Attached is the report for your review. Please provide feedback by the end of the week."</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 flex justify-between items-center">
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-clock mr-1"></i> 25 min • 
+                <i class="fas fa-edit ml-2 mr-1"></i> Writing Exercise • 
+                <i class="fas fa-envelope-open-text ml-2 mr-1"></i> Templates
+              </div>
+              <button class="text-red-600 font-medium hover:text-red-800 flex items-center">
+                Email Writing Practice <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Course Completion -->
+    <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-xl text-white">
+      <div class="text-center max-w-3xl mx-auto">
+        <i class="fas fa-certificate text-4xl mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Complete the Course to Earn Your Certificate</h3>
+        <p class="text-blue-100 mb-6">Demonstrate your Business English proficiency with an official certificate you can share on LinkedIn or with employers.</p>
+        <button class="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition duration-300 font-medium">
+          View Certificate Requirements
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <i class="fas fa-briefcase text-blue-400 text-xl mr-2"></i>
+            <h3 class="text-lg font-semibold">EnglishCourse</h3>
+          </div>
+          <p class="text-gray-400">Professional English training for career advancement and business success.</p>
+          <div class="mt-4 flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Business English</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Vocabulary</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Meetings</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Presentations</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Negotiations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Glossary</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Templates</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Webinars</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 EnglishCourse. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle term definitions
+      const termToggles = document.querySelectorAll('.term-toggle');
+      termToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const termItem = this.closest('.term-item');
+          const definition = termItem.querySelector('.term-definition');
+          const icon = this.querySelector('i');
+          
+          definition.classList.toggle('active');
+          icon.classList.toggle('fa-chevron-down');
+          icon.classList.toggle('fa-chevron-up');
+        });
+      });
+      
+      // Animate cards on scroll
+      const observerOptions = {
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      const vocabCards = document.querySelectorAll('.vocab-card');
+      vocabCards.forEach((card, index) => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>

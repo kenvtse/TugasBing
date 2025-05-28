@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master English with EnglishCourse | Interactive Learning Platform</title>
+  <meta name="description" content="Transform your English skills with our comprehensive courses. Interactive lessons, expert instructors, and flexible learning for all levels.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    }
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.03);
+    }
+    .course-card:hover .course-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+    .course-icon {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Navigation Bar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+        <div class="flex justify-start lg:w-0 lg:flex-1">
+          <a href="landing.html" class="flex items-center">
+            <span class="text-2xl font-bold text-blue-600 flex items-center">
+              <i class="fas fa-language mr-2"></i>EnglishCourse
+            </span>
+          </a>
+        </div>
+        <div class="-mr-2 -my-2 md:hidden">
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" aria-expanded="false" id="mobile-menu-button">
+            <span class="sr-only">Open menu</span>
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <nav class="hidden md:flex space-x-10">
+          <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+          <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium">Features</a>
+          <a href="#courses" class="text-gray-700 hover:text-blue-600 font-medium">Courses</a>
+          <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+          <a href="#pricing" class="text-gray-700 hover:text-blue-600 font-medium">Pricing</a>
+        </nav>
+        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <a href="login.html" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
+            Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="hidden absolute top-16 inset-x-0 p-2 transition transform origin-top-right md:hidden bg-white shadow-lg rounded-lg mx-4" id="mobile-menu">
+      <div class="divide-y-2 divide-gray-50">
+        <div class="pt-5 pb-6 px-5 space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="text-2xl font-bold text-blue-600">EnglishCourse</div>
+            <button type="button" class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" id="mobile-menu-close">
+              <span class="sr-only">Close menu</span>
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div>
+            <nav class="grid gap-y-4">
+              <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+              <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium">Features</a>
+              <a href="#courses" class="text-gray-700 hover:text-blue-600 font-medium">Courses</a>
+              <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+              <a href="#pricing" class="text-gray-700 hover:text-blue-600 font-medium">Pricing</a>
+            </nav>
+          </div>
+          <div>
+            <a href="login.html" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
+              Sign In
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+        <div class="mb-10 lg:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Master English with Confidence</h1>
+          <p class="text-xl mb-8 text-blue-100 max-w-lg">
+            Transform your language skills with our immersive courses designed for all levels. Join thousands of successful learners today.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="login.html" class="bg-white text-blue-600 px-6 py-4 rounded-lg font-semibold hover:bg-blue-50 text-center hover-scale">
+              Start Learning Now
+            </a>
+            <a href="#courses" class="border-2 border-white text-white px-6 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 text-center hover-scale">
+              Explore Courses
+            </a>
+          </div>
+          <div class="mt-8 flex items-center">
+            <div class="flex -space-x-2">
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/women/12.jpg" alt="">
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
+            </div>
+            <p class="ml-4 text-blue-100">
+              Join <span class="font-bold">10,000+</span> happy students
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="People learning English" class="rounded-lg shadow-2xl hover-scale">
+          <div class="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-900 p-4 rounded-lg shadow-lg hidden md:block">
+            <div class="flex items-center">
+              <i class="fas fa-star text-xl mr-2"></i>
+              <div>
+                <p class="font-bold">4.9/5</p>
+                <p class="text-sm">Student Rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators -->
+  <section class="bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-gray-500 mb-6">Trusted by learners at</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-center">
+        <img src="https://via.placeholder.com/150x60?text=Company+1" alt="Company logo" class="h-12 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+        <img src="https://via.placeholder.com/150x60?text=Company+2" alt="Company logo" class="h-12 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+        <img src="https://via.placeholder.com/150x60?text=Company+3" alt="Company logo" class="h-12 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+        <img src="https://via.placeholder.com/150x60?text=Company+4" alt="Company logo" class="h-12 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+        <img src="https://via.placeholder.com/150x60?text=Company+5" alt="Company logo" class="h-12 opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-white" id="features">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Why Choose EnglishCourse?
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Our proven methodology combines the best of technology and language teaching expertise.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-blue-50 p-8 rounded-xl hover-scale">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+            <i class="fas fa-chalkboard-teacher text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Expert Instructors</h3>
+          <p class="text-gray-600">
+            Learn from certified teachers with 10+ years of experience in teaching English as a second language.
+          </p>
+        </div>
+        
+        <div class="bg-blue-50 p-8 rounded-xl hover-scale">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+            <i class="fas fa-laptop-code text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Interactive Platform</h3>
+          <p class="text-gray-600">
+            Engaging multimedia lessons with speech recognition, quizzes, and real-time feedback.
+          </p>
+        </div>
+        
+        <div class="bg-blue-50 p-8 rounded-xl hover-scale">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+            <i class="fas fa-user-graduate text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Personalized Learning</h3>
+          <p class="text-gray-600">
+            Adaptive learning paths tailored to your goals, level, and learning style.
+          </p>
+        </div>
+        
+        <div class="bg-blue-50 p-8 rounded-xl hover-scale">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+            <i class="fas fa-comments text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Live Conversations</h3>
+          <p class="text-gray-600">
+            Practice with native speakers in weekly group sessions and 1-on-1 tutoring.
+          </p>
+        </div>
+        
+        <div class="bg-blue-50 p-8 rounded-xl hover-scale">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+            <i class="fas fa-mobile-alt text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile Friendly</h3>
+          <p class="text-gray-600">
+            Learn on the go with our mobile app available for iOS and Android devices.
+          </p>
+        </div>
+        
+        <div class="bg-blue-50 p-8 rounded-xl hover-scale">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600 text-white mb-4">
+            <i class="fas fa-certificate text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Certification</h3>
+          <p class="text-gray-600">
+            Earn recognized certificates to showcase your language proficiency to employers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="py-16 bg-gray-50" id="courses">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Our Popular Courses
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Structured learning paths for every level and goal.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Course 1 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden course-card hover-scale">
+          <div class="h-48 bg-blue-600 flex items-center justify-center">
+            <i class="fas fa-book-open course-icon text-white text-6xl"></i>
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold mb-1">Beginner</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">English Foundations</h3>
+            <p class="text-gray-600 mb-4">
+              Master basic grammar, vocabulary, and essential communication skills for daily conversations.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-gray-400 mr-2"></i>
+                <span class="text-sm text-gray-600">8 weeks</span>
+              </div>
+              <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Most Popular</span>
+            </div>
+          </div>
+          <div class="px-8 pb-8">
+            <a href="#" class="w-full block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg">
+              Enroll Now
+            </a>
+          </div>
+        </div>
+        
+        <!-- Course 2 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden course-card hover-scale">
+          <div class="h-48 bg-green-600 flex items-center justify-center">
+            <i class="fas fa-briefcase course-icon text-white text-6xl"></i>
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-sm text-green-600 font-semibold mb-1">Intermediate</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Business English</h3>
+            <p class="text-gray-600 mb-4">
+              Develop professional communication skills for meetings, presentations, emails, and negotiations.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-gray-400 mr-2"></i>
+                <span class="text-sm text-gray-600">10 weeks</span>
+              </div>
+              <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Career Focus</span>
+            </div>
+          </div>
+          <div class="px-8 pb-8">
+            <a href="#" class="w-full block text-center bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg">
+              Enroll Now
+            </a>
+          </div>
+        </div>
+        
+        <!-- Course 3 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden course-card hover-scale">
+          <div class="h-48 bg-purple-600 flex items-center justify-center">
+            <i class="fas fa-microphone-alt course-icon text-white text-6xl"></i>
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-sm text-purple-600 font-semibold mb-1">Advanced</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Fluency Mastery</h3>
+            <p class="text-gray-600 mb-4">
+              Achieve native-like fluency with advanced vocabulary, idioms, and pronunciation training.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-gray-400 mr-2"></i>
+                <span class="text-sm text-gray-600">12 weeks</span>
+              </div>
+              <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Intensive</span>
+            </div>
+          </div>
+          <div class="px-8 pb-8">
+            <a href="#" class="w-full block text-center bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-lg">
+              Enroll Now
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800">
+          View all courses
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="gradient-bg text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">10,000+</div>
+          <div class="text-blue-100">Active Students</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">98%</div>
+          <div class="text-blue-100">Satisfaction Rate</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">50+</div>
+          <div class="text-blue-100">Countries</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold mb-2">24/7</div>
+          <div class="text-blue-100">Support Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-white" id="testimonials">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Success Stories
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Don't just take our word for it - hear from our students.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-50 p-8 rounded-xl">
+          <div class="flex items-center mb-6">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria">
+            <div>
+              <h4 class="font-semibold text-gray-900">Maria Rodriguez</h4>
+              <p class="text-gray-600">Spain | Business English</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic mb-6">
+            "Thanks to EnglishCourse, I was able to confidently lead meetings with international clients just 3 months after starting. The business English course was exactly what I needed to advance my career."
+          </p>
+          <div class="flex">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-50 p-8 rounded-xl">
+          <div class="flex items-center mb-6">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Ahmed">
+            <div>
+              <h4 class="font-semibold text-gray-900">Ahmed Khan</h4>
+              <p class="text-gray-600">Pakistan | Fluency Mastery</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic mb-6">
+            "The pronunciation exercises and live conversation practice helped me reduce my accent significantly. I finally feel comfortable speaking English in any situation."
+          </p>
+          <div class="flex">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-50 p-8 rounded-xl">
+          <div class="flex items-center mb-6">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Yuki">
+            <div>
+              <h4 class="font-semibold text-gray-900">Yuki Tanaka</h4>
+              <p class="text-gray-600">Japan | English Foundations</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic mb-6">
+            "As a complete beginner, I was nervous about learning English. The step-by-step lessons and patient instructors made the process enjoyable and effective."
+          </p>
+          <div class="flex">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star-half-alt text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 4 -->
+        <div class="bg-gray-50 p-8 rounded-xl">
+          <div class="flex items-center mb-6">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/76.jpg" alt="David">
+            <div>
+              <h4 class="font-semibold text-gray-900">David Müller</h4>
+              <p class="text-gray-600">Germany | All Courses</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic mb-6">
+            "I've taken multiple courses and each one exceeded my expectations. The mobile app lets me study during my commute, and the weekly speaking clubs are fantastic."
+          </p>
+          <div class="flex">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-16 bg-gray-50" id="pricing">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Simple, Transparent Pricing
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Choose the plan that fits your learning goals and budget.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Basic Plan -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+          <div class="p-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Basic</h3>
+            <p class="text-gray-600 mb-6">For self-paced learners</p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-gray-900">$19</span>
+              <span class="text-gray-600">/month</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Access to all course materials</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Interactive exercises</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Progress tracking</span>
+              </li>
+              <li class="flex items-center text-gray-400">
+                <i class="fas fa-times mr-2"></i>
+                <span>Live classes</span>
+              </li>
+              <li class="flex items-center text-gray-400">
+                <i class="fas fa-times mr-2"></i>
+                <span>Personal tutor</span>
+              </li>
+            </ul>
+            <a href="#" class="w-full block text-center bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-4 rounded-lg">
+              Get Started
+            </a>
+          </div>
+        </div>
+        
+        <!-- Popular Plan -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 relative">
+          <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+            MOST POPULAR
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Premium</h3>
+            <p class="text-gray-600 mb-6">Best for serious learners</p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-gray-900">$49</span>
+              <span class="text-gray-600">/month</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Everything in Basic</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Weekly live group classes</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Monthly 1-on-1 session</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Priority support</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Certification</span>
+              </li>
+            </ul>
+            <a href="#" class="w-full block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg">
+              Get Started
+            </a>
+          </div>
+        </div>
+        
+        <!-- Pro Plan -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+          <div class="p-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Pro</h3>
+            <p class="text-gray-600 mb-6">For fastest results</p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-gray-900">$99</span>
+              <span class="text-gray-600">/month</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Everything in Premium</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Weekly 1-on-1 tutoring</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Custom learning plan</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>24/7 tutor access</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Career coaching</span>
+              </li>
+            </ul>
+            <a href="#" class="w-full block text-center bg-gray-800 hover:bg-black text-white font-medium py-3 px-4 rounded-lg">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-gray-600">Need help choosing? <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Contact our advisors</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="gradient-bg text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold mb-6">Ready to transform your English skills?</h2>
+      <p class="text-xl text-blue-100 mb-8">
+        Join thousands of learners worldwide and start your journey to English fluency today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="login.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 hover-scale">
+          Start Learning Now - It's Free
+        </a>
+        <a href="#" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 hover-scale">
+          Speak With an Advisor
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          Everything you need to know about EnglishCourse.
+        </p>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="border border-gray-200 rounded-lg p-6">
+          <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 faq-toggle">
+            <span>What level of English do I need to start?</span>
+            <i class="fas fa-plus text-blue-600"></i>
+          </button>
+          <div class="mt-4 text-gray-600 hidden faq-content">
+            We offer courses for all levels, from complete beginners (A1) to advanced learners (C2). When you sign up, you'll take a placement test to determine your current level and recommend the best starting point for you.
+          </div>
+        </div>
+        
+        <div class="border border-gray-200 rounded-lg p-6">
+          <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 faq-toggle">
+            <span>How much time should I dedicate to learning?</span>
+            <i class="fas fa-plus text-blue-600"></i>
+          </button>
+          <div class="mt-4 text-gray-600 hidden faq-content">
+            We recommend at least 30 minutes per day for consistent progress. However, our platform is flexible and you can learn at your own pace. Students who dedicate 4-5 hours per week typically see significant improvement within 2-3 months.
+          </div>
+        </div>
+        
+        <div class="border border-gray-200 rounded-lg p-6">
+  <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 faq-toggle">
+    <span>How much time should I dedicate to learning?</span>
+    <i class="fas fa-plus text-blue-600"></i>
+  </button>
+  <div class="mt-4 text-gray-600 hidden faq-content">
+    We recommend at least 30 minutes per day for consistent progress. However, our platform is flexible and you can learn at your own pace. Students who dedicate 4-5 hours per week typically see significant improvement within 2-3 months.
+  </div>
+</div>
+
+<!-- Jika kamu ingin menambahkan div berikutnya, pastikan class lengkap -->
+<div class="border border-gray-200 rounded-lg p-6 mt-4">
+  <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 faq-toggle">
+    <span>Is there a certificate upon completion?</span>
+    <i class="fas fa-plus text-blue-600"></i>
+  </button>
+  <div class="mt-4 text-gray-600 hidden faq-content">
+    Yes! Upon successful completion of our courses, you will receive an official certificate that you can add to your resume or LinkedIn profile.
+  </div>
+</div>
