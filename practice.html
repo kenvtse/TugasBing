@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice - English Course</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .progress-bar {
+      height: 10px;
+      background-color: #e5e7eb;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    .question-card {
+      transition: all 0.3s ease;
+    }
+    .question-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .correct-answer {
+      background-color: #d1fae5;
+      border-left: 4px solid #10b981;
+    }
+    .incorrect-answer {
+      background-color: #fee2e2;
+      border-left: 4px solid #ef4444;
+    }
+  </style>
+  <script>
+    let score = 0;
+    const totalQuestions = 3;
+    let questionsAnswered = 0;
+
+    function updateProgress() {
+      const progress = (questionsAnswered / totalQuestions) * 100;
+      document.getElementById('progress').style.width = `${progress}%`;
+      document.getElementById('score-display').textContent = `Score: ${score}/${totalQuestions}`;
+    }
+
+    function checkGrammarAnswer() {
+      const selected = document.querySelector('input[name="grammar"]:checked');
+      const result = document.getElementById("grammar-result");
+      const explanation = document.getElementById("grammar-explanation");
+      
+      if (!selected) {
+        result.textContent = "⚠️ Please select an answer";
+        result.className = "text-yellow-600 font-semibold mt-2";
+        return;
+      }
+      
+      if (selected.value === "b") {
+        result.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Correct!';
+        result.className = "text-green-600 font-semibold mt-2";
+        explanation.textContent = "The correct answer is 'She goes to school every day' because with third person singular (she/he/it), we add -s to the verb in present simple tense.";
+        explanation.className = "text-gray-700 mt-2 p-3 rounded bg-green-50";
+        score++;
+      } else {
+        result.innerHTML = '<i class="fas fa-times-circle mr-1"></i> Incorrect';
+        result.className = "text-red-600 font-semibold mt-2";
+        explanation.textContent = "The correct answer is B. 'She goes to school every day' is correct because with third person singular (she/he/it), we add -s to the verb in present simple tense.";
+        explanation.className = "text-gray-700 mt-2 p-3 rounded bg-red-50";
+      }
+      
+      document.getElementById('grammar-section').classList.add(selected.value === "b" ? "correct-answer" : "incorrect-answer");
+      questionsAnswered++;
+      updateProgress();
+    }
+
+    function checkTenseAnswer() {
+      const input = document.getElementById("tense-answer").value.trim().toLowerCase();
+      const result = document.getElementById("tense-result");
+      const explanation = document.getElementById("tense-explanation");
+      
+      if (!input) {
+        result.textContent = "⚠️ Please enter an answer";
+        result.className = "text-yellow-600 font-semibold mt-2";
+        return;
+      }
+      
+      if (input === "ate") {
+        result.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Correct!';
+        result.className = "text-green-600 font-semibold mt-2";
+        explanation.textContent = "'Ate' is the correct past tense of 'eat'. The sentence describes a completed action in the past.";
+        explanation.className = "text-gray-700 mt-2 p-3 rounded bg-green-50";
+        score++;
+      } else {
+        result.innerHTML = '<i class="fas fa-times-circle mr-1"></i> Incorrect';
+        result.className = "text-red-600 font-semibold mt-2";
+        explanation.textContent = "The correct answer is 'ate', which is the past tense of 'eat'. The sentence describes a completed action in the past.";
+        explanation.className = "text-gray-700 mt-2 p-3 rounded bg-red-50";
+      }
+      
+      document.getElementById('tense-section').classList.add(input === "ate" ? "correct-answer" : "incorrect-answer");
+      questionsAnswered++;
+      updateProgress();
+    }
+
+    function checkVocabularyAnswer() {
+      const input = document.getElementById("vocab-answer").value.trim().toLowerCase();
+      const result = document.getElementById("vocab-result");
+      const explanation = document.getElementById("vocab-explanation");
+      
+      if (!input) {
+        result.textContent = "⚠️ Please enter an answer";
+        result.className = "text-yellow-600 font-semibold mt-2";
+        return;
+      }
+      
+      if (input === "important") {
+        result.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Correct!';
+        result.className = "text-green-600 font-semibold mt-2";
+        explanation.innerHTML = "Both 'crucial' and 'important' mean something that is <strong>of great significance or value</strong>. Other synonyms include 'vital', 'essential', and 'critical'.";
+        explanation.className = "text-gray-700 mt-2 p-3 rounded bg-green-50";
+        score++;
+      } else {
+        result.innerHTML = '<i class="fas fa-times-circle mr-1"></i> Incorrect';
+        result.className = "text-red-600 font-semibold mt-2";
+        explanation.innerHTML = "The correct answer is 'important'. Both 'crucial' and 'important' mean something that is <strong>of great significance or value</strong>. Other synonyms include 'vital', 'essential', and 'critical'.";
+        explanation.className = "text-gray-700 mt-2 p-3 rounded bg-red-50";
+      }
+      
+      document.getElementById('vocab-section').classList.add(input === "important" ? "correct-answer" : "incorrect-answer");
+      questionsAnswered++;
+      updateProgress();
+    }
+
+    function resetQuiz() {
+      // Reset all answers and styles
+      document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+      document.getElementById("tense-answer").value = "";
+      document.getElementById("vocab-answer").value = "";
+      
+      // Reset results
+      document.querySelectorAll('[id$="-result"], [id$="-explanation"]').forEach(el => {
+        el.textContent = "";
+        el.className = "";
+      });
+      
+      // Reset card styles
+      document.querySelectorAll('.question-card').forEach(card => {
+        card.classList.remove("correct-answer", "incorrect-answer");
+      });
+      
+      // Reset score and progress
+      score = 0;
+      questionsAnswered = 0;
+      updateProgress();
+    }
+  </script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600 flex items-center">
+        <i class="fas fa-language mr-2"></i> EnglishCourse
+      </h1>
+      <nav class="hidden md:flex">
+        <a href="index.html" class="text-gray-700 mx-2 hover:text-blue-600"><i class="fas fa-home mr-1"></i> Index</a>
+        <a href="home.html" class="text-gray-700 mx-2 hover:text-blue-600"><i class="fas fa-book-open mr-1"></i> Home</a>
+        <a href="courses.html" class="text-gray-700 mx-2 hover:text-blue-600"><i class="fas fa-graduation-cap mr-1"></i> Courses</a>
+        <a href="practice.html" class="text-gray-700 mx-2 hover:text-blue-600 font-semibold"><i class="fas fa-pen-fancy mr-1"></i> Practice</a>
+        <a href="login.html" class="text-gray-700 mx-2 hover:text-blue-600"><i class="fas fa-user mr-1"></i> Login</a>
+      </nav>
+      <button class="md:hidden text-gray-700">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="max-w-4xl mx-auto px-6 pt-6">
+    <div class="flex justify-between items-center mb-2">
+      <span id="score-display" class="font-semibold">Score: 0/3</span>
+      <button onclick="resetQuiz()" class="text-sm text-blue-600 hover:text-blue-800">
+        <i class="fas fa-redo mr-1"></i> Reset Quiz
+      </button>
+    </div>
+    <div class="progress-bar">
+      <div id="progress" class="progress" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-6 py-8">
+    <h2 class="text-4xl font-bold text-blue-700 mb-8 text-center flex justify-center items-center">
+      <i class="fas fa-pencil-alt mr-3"></i> Practice Your English
+    </h2>
+
+    <!-- Grammar Quiz -->
+    <section id="grammar-section" class="bg-white shadow-lg rounded-lg p-6 mb-8 question-card">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3">
+          1
+        </div>
+        <h3 class="text-2xl font-semibold text-blue-600">Grammar Quiz</h3>
+      </div>
+      <p class="mb-4 text-gray-700">Choose the correct sentence:</p>
+      <div class="space-y-3">
+        <label class="flex items-center space-x-3 p-3 rounded hover:bg-gray-50 cursor-pointer">
+          <input type="radio" name="grammar" value="a" class="h-4 w-4 text-blue-600" />
+          <span>A. She go to school every day.</span>
+        </label>
+        <label class="flex items-center space-x-3 p-3 rounded hover:bg-gray-50 cursor-pointer">
+          <input type="radio" name="grammar" value="b" class="h-4 w-4 text-blue-600" />
+          <span>B. She goes to school every day.</span>
+        </label>
+        <label class="flex items-center space-x-3 p-3 rounded hover:bg-gray-50 cursor-pointer">
+          <input type="radio" name="grammar" value="c" class="h-4 w-4 text-blue-600" />
+          <span>C. She going to school every day.</span>
+        </label>
+      </div>
+      <button onclick="checkGrammarAnswer()" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center">
+        <i class="fas fa-paper-plane mr-2"></i> Submit Answer
+      </button>
+      <div id="grammar-result" class="mt-3"></div>
+      <div id="grammar-explanation"></div>
+    </section>
+
+    <!-- Tenses Fill-in-the-Blank -->
+    <section id="tense-section" class="bg-white shadow-lg rounded-lg p-6 mb-8 question-card">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3">
+          2
+        </div>
+        <h3 class="text-2xl font-semibold text-blue-600">Tenses Exercise</h3>
+      </div>
+      <p class="mb-4 text-gray-700">Fill in the blank with the correct past tense verb:</p>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <p class="text-lg italic">
+          Yesterday, I 
+          <input type="text" id="tense-answer" class="border-b-2 border-blue-300 px-2 py-1 mx-1 focus:border-blue-500 focus:outline-none" placeholder="type here" /> 
+          a delicious meal.
+        </p>
+      </div>
+      <button onclick="checkTenseAnswer()" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center">
+        <i class="fas fa-paper-plane mr-2"></i> Submit Answer
+      </button>
+      <div id="tense-result" class="mt-3"></div>
+      <div id="tense-explanation"></div>
+    </section>
+
+    <!-- Vocabulary Match -->
+    <section id="vocab-section" class="bg-white shadow-lg rounded-lg p-6 mb-8 question-card">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-3">
+          3
+        </div>
+        <h3 class="text-2xl font-semibold text-blue-600">Vocabulary</h3>
+      </div>
+      <p class="mb-4 text-gray-700">What is a synonym of "crucial"?</p>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+        <input type="text" id="vocab-answer" class="border-2 border-gray-200 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none flex-grow" placeholder="Type your answer here..." />
+        <button onclick="checkVocabularyAnswer()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center justify-center">
+          <i class="fas fa-paper-plane mr-2"></i> Submit
+        </button>
+      </div>
+      <div id="vocab-result" class="mt-3"></div>
+      <div id="vocab-explanation"></div>
+    </section>
+
+    <!-- Completion Message (hidden by default) -->
+    <div id="completion-message" class="hidden bg-green-50 border-l-4 border-green-500 p-4 mb-8 rounded-r-lg">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-green-800">Quiz Completed!</h3>
+          <div class="mt-2 text-green-700">
+            <p>Great job completing the quiz! You scored <span id="final-score" class="font-bold">3/3</span>.</p>
+            <p class="mt-1">Keep practicing to improve your English skills!</p>
+          </div>
+          <div class="mt-4">
+            <button onclick="resetQuiz()" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+              <i class="fas fa-redo mr-2"></i> Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow text-center py-6 text-gray-600 mt-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-6 mb-4">
+        <a href="#" class="text-gray-600 hover:text-blue-600">About Us</a>
+        <a href="#" class="text-gray-600 hover:text-blue-600">Contact</a>
+        <a href="#" class="text-gray-600 hover:text-blue-600">Privacy Policy</a>
+        <a href="#" class="text-gray-600 hover:text-blue-600">Terms of Service</a>
+      </div>
+      <p class="text-sm">&copy; 2025 EnglishCourse. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Show completion message when all questions are answered
+    function updateProgress() {
+      const progress = (questionsAnswered / totalQuestions) * 100;
+      document.getElementById('progress').style.width = `${progress}%`;
+      document.getElementById('score-display').textContent = `Score: ${score}/${totalQuestions}`;
+      
+      if (questionsAnswered === totalQuestions) {
+        document.getElementById('final-score').textContent = `${score}/${totalQuestions}`;
+        document.getElementById('completion-message').classList.remove('hidden');
+        
+        // Scroll to completion message
+        setTimeout(() => {
+          document.getElementById('completion-message').scrollIntoView({ 
+            behavior: 'smooth' 
+          });
+        }, 500);
+      } else {
+        document.getElementById('completion-message').classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
