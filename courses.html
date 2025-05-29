@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Courses - English Course</title>
+  <meta name="description" content="Comprehensive English learning courses covering grammar, tenses, business vocabulary, and speaking skills.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    .course-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+      border-left-color: #3b82f6;
+    }
+    .progress-bar {
+      height: 6px;
+      background-color: #e5e7eb;
+      border-radius: 3px;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 3px;
+      background-color: #3b82f6;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header with improved navigation -->
+  <header class="bg-white shadow sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center">
+          <h1 class="text-2xl font-bold text-blue-600 flex items-center">
+            <i class="fas fa-language mr-2"></i>
+            EnglishCourse
+          </h1>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a href="courses.html" class="bg-blue-50 text-blue-700 px-3 py-2 rounded-md text-sm font-medium">Courses</a>
+          <a href="pricing.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+          <a href="resources.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Resources</a>
+          <a href="login.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Login</a>
+          <a href="signup.html" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Sign Up Free</a>
+        </nav>
+      </div>
+      
+      <!-- Mobile Navigation (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Home</a>
+          <a href="courses.html" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-50 text-blue-700">Courses</a>
+          <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Pricing</a>
+          <a href="resources.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Resources</a>
+          <a href="login.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Login</a>
+          <a href="signup.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 text-center">Sign Up Free</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Master English with Our Courses</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Interactive lessons, expert instructors, and personalized learning paths to help you achieve fluency.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#courses" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Explore Courses</a>
+        <a href="pricing.html" class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-12" id="courses">
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-700">Our English Courses</h2>
+      <div class="relative">
+        <select class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option>Filter by Category</option>
+          <option>Grammar</option>
+          <option>Vocabulary</option>
+          <option>Speaking</option>
+          <option>Writing</option>
+          <option>Business English</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Grammar Course -->
+      <div class="course-card bg-white rounded-lg shadow p-6 hover:shadow-xl relative">
+        <div class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">BESTSELLER</div>
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+            <i class="fas fa-book text-blue-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-blue-600">Grammar Mastery</h3>
+        </div>
+        <p class="text-gray-700 mb-4">Comprehensive guide to English grammar rules with clear explanations, examples, and interactive exercises.</p>
+        <div class="flex items-center text-sm text-gray-500 mb-4">
+          <i class="fas fa-star text-yellow-400 mr-1"></i>
+          <span class="font-semibold text-gray-700">4.8</span>
+          <span class="mx-1">•</span>
+          <span>128 lessons</span>
+          <span class="mx-1">•</span>
+          <span>Beginner-Advanced</span>
+        </div>
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span class="text-gray-600">Your progress</span>
+            <span class="font-medium">25%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 25%"></div>
+          </div>
+        </div>
+        <a href="course-grammar.html" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+          Continue Learning
+        </a>
+      </div>
+
+      <!-- Tenses Course -->
+      <div class="course-card bg-white rounded-lg shadow p-6 hover:shadow-xl">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+            <i class="fas fa-clock text-orange-500 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-blue-600">English Tenses</h3>
+        </div>
+        <p class="text-gray-700 mb-4">Master all English tenses with practical examples, timelines, and real-world application exercises.</p>
+        <div class="flex items-center text-sm text-gray-500 mb-4">
+          <i class="fas fa-star text-yellow-400 mr-1"></i>
+          <span class="font-semibold text-gray-700">4.7</span>
+          <span class="mx-1">•</span>
+          <span>64 lessons</span>
+          <span class="mx-1">•</span>
+          <span>Intermediate</span>
+        </div>
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span class="text-gray-600">Your progress</span>
+            <span class="font-medium">10%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 10%"></div>
+          </div>
+        </div>
+        <a href="course-tenses.html" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+          Start Learning
+        </a>
+      </div>
+
+      <!-- Business Vocabulary Course -->
+      <div class="course-card bg-white rounded-lg shadow p-6 hover:shadow-xl relative">
+        <div class="absolute top-4 right-4 bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">NEW</div>
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+            <i class="fas fa-briefcase text-purple-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-blue-600">Business Vocabulary</h3>
+        </div>
+        <p class="text-gray-700 mb-4">Essential vocabulary for professional settings, meetings, presentations, and corporate communication.</p>
+        <div class="flex items-center text-sm text-gray-500 mb-4">
+          <i class="fas fa-star text-yellow-400 mr-1"></i>
+          <span class="font-semibold text-gray-700">4.9</span>
+          <span class="mx-1">•</span>
+          <span>42 lessons</span>
+          <span class="mx-1">•</span>
+          <span>Advanced</span>
+        </div>
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span class="text-gray-600">Your progress</span>
+            <span class="font-medium">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <a href="course-business.html" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+          Enroll Now
+        </a>
+      </div>
+
+      <!-- Speaking Course -->
+      <div class="course-card bg-white rounded-lg shadow p-6 hover:shadow-xl">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+            <i class="fas fa-comments text-green-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-blue-600">Speaking Fluency</h3>
+        </div>
+        <p class="text-gray-700 mb-4">Improve pronunciation, conversation skills, and confidence with interactive speaking exercises.</p>
+        <div class="flex items-center text-sm text-gray-500 mb-4">
+          <i class="fas fa-star text-yellow-400 mr-1"></i>
+          <span class="font-semibold text-gray-700">4.6</span>
+          <span class="mx-1">•</span>
+          <span>Live Classes</span>
+          <span class="mx-1">•</span>
+          <span>All Levels</span>
+        </div>
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span class="text-gray-600">Your progress</span>
+            <span class="font-medium">5%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 5%"></div>
+          </div>
+        </div>
+        <a href="course-speaking.html" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+          Join Class
+        </a>
+      </div>
+
+      <!-- Writing Course -->
+      <div class="course-card bg-white rounded-lg shadow p-6 hover:shadow-xl">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+            <i class="fas fa-pen-fancy text-yellow-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-blue-600">Professional Writing</h3>
+        </div>
+        <p class="text-gray-700 mb-4">Master emails, reports, essays, and other forms of professional writing with style guides.</p>
+        <div class="flex items-center text-sm text-gray-500 mb-4">
+          <i class="fas fa-star text-yellow-400 mr-1"></i>
+          <span class="font-semibold text-gray-700">4.5</span>
+          <span class="mx-1">•</span>
+          <span>36 lessons</span>
+          <span class="mx-1">•</span>
+          <span>Intermediate+</span>
+        </div>
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span class="text-gray-600">Your progress</span>
+            <span class="font-medium">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <a href="#" class="block text-center bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg cursor-not-allowed">
+          Coming Soon
+        </a>
+      </div>
+
+      <!-- IELTS Preparation Course -->
+      <div class="course-card bg-white rounded-lg shadow p-6 hover:shadow-xl">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+            <i class="fas fa-certificate text-red-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-blue-600">IELTS Preparation</h3>
+        </div>
+        <p class="text-gray-700 mb-4">Comprehensive preparation for all IELTS test sections with practice tests and expert feedback.</p>
+        <div class="flex items-center text-sm text-gray-500 mb-4">
+          <i class="fas fa-star text-yellow-400 mr-1"></i>
+          <span class="font-semibold text-gray-700">4.9</span>
+          <span class="mx-1">•</span>
+          <span>8-week program</span>
+          <span class="mx-1">•</span>
+          <span>Advanced</span>
+        </div>
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span class="text-gray-600">Your progress</span>
+            <span class="font-medium">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <a href="#" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+          Enroll Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="mt-20">
+      <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">What Our Students Say</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <i class="fas fa-user text-blue-600"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold">Maria S.</h4>
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">"The grammar course completely transformed my understanding of English. The lessons are so well-structured and easy to follow."</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <i class="fas fa-user text-blue-600"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold">James L.</h4>
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">"I was able to improve my IELTS score by 1.5 points after taking the preparation course. Highly recommended!"</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <i class="fas fa-user text-blue-600"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold">Amina K.</h4>
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">"The business vocabulary course helped me feel confident in my international meetings. The practical examples were invaluable."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mt-20 bg-blue-700 rounded-xl p-8 text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to improve your English?</h2>
+        <p class="text-xl mb-8">Join thousands of students who have achieved fluency with our courses.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="signup.html" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Start Learning Free</a>
+          <a href="pricing.html" class="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300">Compare Plans</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white pt-12 pb-6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <i class="fas fa-language mr-2"></i>
+            EnglishCourse
+          </h3>
+          <p class="text-gray-400">Helping learners achieve English fluency since 2015.</p>
+          <div class="flex mt-4 space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Courses</h4>
+          <ul class="space-y-2">
+            <li><a href="course-grammar.html" class="text-gray-400 hover:text-white">Grammar Mastery</a></li>
+            <li><a href="course-tenses.html" class="text-gray-400 hover:text-white">English Tenses</a></li>
+            <li><a href="course-business.html" class="text-gray-400 hover:text-white">Business English</a></li>
+            <li><a href="course-speaking.html" class="text-gray-400 hover:text-white">Speaking Fluency</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">IELTS Preparation</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+            <li><a href="teachers.html" class="text-gray-400 hover:text-white">Our Teachers</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+            <li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li><a href="help.html" class="text-gray-400 hover:text-white">Help Center</a></li>
+            <li><a href="faq.html" class="text-gray-400 hover:text-white">FAQs</a></li>
+            <li><a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+            <li><a href="refund.html" class="text-gray-400 hover:text-white">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+        <p>&copy; 2025 EnglishCourse. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
